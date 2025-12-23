@@ -16,8 +16,8 @@ const ChatWidget = () => {
                 <MessageCircle className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <p className="font-semibold text-sm">Neurotech Africa</p>
-                <p className="text-xs text-green-500">Online</p>
+                <p className="font-semibold text-sm">Gira AI</p>
+                <p className="text-xs text-primary">Online</p>
               </div>
             </div>
           </div>

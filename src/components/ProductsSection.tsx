@@ -30,21 +30,9 @@ const callAgentFeatures = [
 
 const testimonials = [
   {
-    name: "James Mukasa",
-    role: "CEO, FastDelivery Rwanda",
-    content: "ANDA AI transformed our delivery operations. We've seen a 40% reduction in missed orders and our customers love the instant WhatsApp responses.",
-    rating: 5,
-  },
-  {
-    name: "Grace Uwimana",
-    role: "Operations Manager, TechHub Kigali",
-    content: "The call agent handles our customer inquiries professionally. It's like having a 24/7 support team without the overhead costs.",
-    rating: 5,
-  },
-  {
-    name: "Patrick Habimana",
-    role: "Founder, E-Commerce Plus",
-    content: "Gira AI understood our local challenges and delivered a solution that truly works for African businesses. Highly recommended!",
+    name: "Gobuy",
+    role: "E-Commerce Company",
+    content: "Gira AI has transformed our customer service operations. The WhatsApp agent handles orders seamlessly and our customers love the instant responses. Highly recommended for any business looking to scale!",
     rating: 5,
   },
 ];
@@ -142,9 +130,9 @@ const ProductsSection = () => {
           {activeTab === "call" && (
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/30 rounded-full px-4 py-2">
-                  <Phone className="w-4 h-4 text-blue-400" />
-                  <span className="text-sm font-medium text-blue-400">Gira AI - Call Agent</span>
+                <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-2">
+                  <Phone className="w-4 h-4 text-primary" />
+                  <span className="text-sm font-medium text-primary">AYANDA AI - Call Agent</span>
                 </div>
                 <h3 className="text-3xl md:text-4xl font-bold">
                   AI-Powered <span className="text-gradient">Voice Assistant</span>
@@ -171,8 +159,8 @@ const ProductsSection = () => {
                       <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mb-6 animate-pulse">
                         <Phone className="w-10 h-10 text-primary" />
                       </div>
-                      <h4 className="text-xl font-bold mb-2">AI Calling...</h4>
-                      <p className="text-muted-foreground text-sm mb-6">Gira AI Call Agent</p>
+                      <h4 className="text-xl font-bold mb-2">AYANDA AI Calling...</h4>
+                      <p className="text-muted-foreground text-sm mb-6">AI Call Agent</p>
                       <div className="flex gap-4">
                         <div className="w-14 h-14 rounded-full bg-destructive flex items-center justify-center">
                           <Phone className="w-6 h-6 text-destructive-foreground rotate-[135deg]" />

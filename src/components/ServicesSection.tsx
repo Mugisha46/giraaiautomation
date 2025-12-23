@@ -1,4 +1,4 @@
-import { MessageSquare, BarChart3, Brain, Zap } from "lucide-react";
+import { MessageSquare, BarChart3, Brain, Zap, GraduationCap } from "lucide-react";
 
 const services = [
   {
@@ -25,6 +25,12 @@ const services = [
     description:
       "Seamlessly integrate AI capabilities into your existing systems. We ensure smooth adoption and maximum impact for your operations.",
   },
+  {
+    icon: GraduationCap,
+    title: "AI Training & Workshops",
+    description:
+      "Comprehensive training programs on how to use AI effectively in all sectors. Empower your team with practical AI skills and knowledge for the future.",
+  },
 ];
 
 const ServicesSection = () => {
@@ -44,7 +50,7 @@ const ServicesSection = () => {
             <span className="text-gradient">African business</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            At Neurotech Africa, we offer AI solutions tailored to the unique
+            At Gira AI, we offer AI solutions tailored to the unique
             needs of African businesses. Our services are designed to transform
             your operations and customer experiences.
           </p>

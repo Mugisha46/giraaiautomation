@@ -4,7 +4,7 @@ import { Menu, X, Handshake } from "lucide-react";
 const navItems = [
   { name: "Home", href: "#home", active: true },
   { name: "Products", href: "#products" },
-  { name: "About", href: "#about" },
+  { name: "About Us", href: "#products", scrollToTab: "about" },
   { name: "Contact", href: "#contact" },
 ];
 
