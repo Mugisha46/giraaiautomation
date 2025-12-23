@@ -5,7 +5,7 @@ const services = [
     icon: MessageSquare,
     title: "Conversational AI",
     description:
-      "AI-powered chatbots for multiple platforms (WhatsApp, Telegram, Messenger). We help businesses enable a fast and excellent 24/7 customer service experience.",
+      "AI-powered chatbots for multiple platforms (website, apps). We help businesses enable a fast and excellent 24/7 customer service experience.",
   },
   {
     icon: Zap,
