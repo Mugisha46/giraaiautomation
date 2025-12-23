@@ -1,4 +1,4 @@
-import { MessageSquare, BarChart3, Brain, Zap, GraduationCap, Shield } from "lucide-react";
+import { MessageSquare, Zap, GraduationCap } from "lucide-react";
 
 const services = [
   {
@@ -6,18 +6,6 @@ const services = [
     title: "Conversational AI",
     description:
       "AI-powered chatbots for multiple platforms (WhatsApp, Telegram, Messenger). We help businesses enable a fast and excellent 24/7 customer service experience.",
-  },
-  {
-    icon: BarChart3,
-    title: "Data Strategy Consultation",
-    description:
-      "Our data strategists help you harness your information assets to drive growth, efficiency, and innovation. Create a plan for your data future.",
-  },
-  {
-    icon: Brain,
-    title: "Machine Learning Solutions",
-    description:
-      "Custom ML models tailored to your business needs. From predictive analytics to natural language processing, we build intelligent systems.",
   },
   {
     icon: Zap,
@@ -30,12 +18,6 @@ const services = [
     title: "AI Training & Workshops",
     description:
       "Comprehensive training programs on how to use AI effectively in all sectors. Empower your team with practical AI skills and knowledge for the future.",
-  },
-  {
-    icon: Shield,
-    title: "Fraud Detection & Risk Management",
-    description:
-      "Protect your business from fraud and hidden risks with AI-powered detection systems that identify mistakes and suspicious activities in real-time.",
   },
 ];
 
