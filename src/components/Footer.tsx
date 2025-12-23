@@ -3,9 +3,8 @@ import {
   Phone,
   MapPin,
   Instagram,
-  Twitter,
-  Youtube,
   Handshake,
+  MessageCircle,
 } from "lucide-react";
 
 const Footer = () => {
@@ -33,7 +32,7 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://instagram.com/gira_ai01"
+                href="https://www.instagram.com/gira_ai01?igsh=MWxuaW42d2l6a3lvNg=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
@@ -41,18 +40,22 @@ const Footer = () => {
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="https://twitter.com/gira_ai"
+                href="https://x.com/gira_ai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
               >
-                <Twitter className="w-5 h-5" />
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
               </a>
               <a
-                href="#"
+                href="https://wa.me/qr/YKQAOJA57M4MC1"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
               >
-                <Youtube className="w-5 h-5" />
+                <MessageCircle className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -80,9 +83,9 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 "ANDA AI - WhatsApp Agent",
-                "Call Agent",
+                "AYANDA AI - Call Agent",
                 "Custom AI Solutions",
-                "Business Automation",
+                "AI Training & Workshops",
               ].map((product) => (
                 <li key={product}>
                   <a
@@ -121,7 +124,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border mt-12 pt-8 text-center text-muted-foreground text-sm">
-          <p>© 2024 Gira AI. All rights reserved.</p>
+          <p>© 2025 Gira AI. All rights reserved.</p>
         </div>
       </div>
     </footer>

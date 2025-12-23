@@ -1,5 +1,4 @@
 import { ArrowRight, MessageCircle, Phone } from "lucide-react";
-import giraOfficeImage from "@/assets/gira-ai-office.jpg";
 
 const HeroSection = () => {
   return (
@@ -21,10 +20,10 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Content */}
           <div className="space-y-8 animate-slide-up">
-            <div className="inline-flex items-center gap-2 glass-card rounded-full px-4 py-2">
+            <div className="inline-flex items-center gap-2 glass-card rounded-full px-4 py-2 mx-auto">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               <span className="text-sm text-muted-foreground">AI Automation Agency</span>
             </div>
@@ -34,11 +33,11 @@ const HeroSection = () => {
               <span className="text-gradient">AI Solutions</span>
             </h1>
 
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
               Transform challenges into opportunities. We develop and implement AI-driven solutions that help businesses save time, reduce costs, and optimize operations.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 pt-4">
+            <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
               <a href="#products" className="btn-hero group inline-flex items-center gap-2">
                 Explore Our Agents
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -52,7 +51,7 @@ const HeroSection = () => {
             </div>
 
             {/* Features Pills */}
-            <div className="flex flex-wrap gap-3 pt-4">
+            <div className="flex flex-wrap justify-center gap-3 pt-4">
               {["WhatsApp Agent", "Call Agent", "24/7 Support"].map((feature) => (
                 <div
                   key={feature}
@@ -62,19 +61,6 @@ const HeroSection = () => {
                   <span className="text-sm font-medium">{feature}</span>
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* Right Content - Office Image */}
-          <div className="relative animate-slide-up delay-200 hidden lg:block">
-            <div className="relative">
-              <img
-                src={giraOfficeImage}
-                alt="Gira AI Team"
-                className="w-full max-w-xl mx-auto rounded-2xl shadow-2xl border border-border/50"
-              />
-              {/* Glow effect behind image */}
-              <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full -z-10 scale-75" />
             </div>
           </div>
         </div>
