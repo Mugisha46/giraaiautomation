@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import {
   Mail,
   Phone,
@@ -10,13 +9,7 @@ import {
 
 const Footer = () => {
   return (
-    <motion.footer
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="py-16 border-t border-border relative"
-    >
+    <footer className="py-16 border-t border-border relative animate-fade-in">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
@@ -134,7 +127,7 @@ const Footer = () => {
           <p>© 2025 Gira AI. All rights reserved.</p>
         </div>
       </div>
-    </motion.footer>
+    </footer>
   );
 };
 
