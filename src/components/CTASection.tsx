@@ -1,17 +1,10 @@
-import { motion } from "framer-motion";
 import { ArrowRight, Star, MessageCircle, Phone as PhoneIcon } from "lucide-react";
 
 const CTASection = () => {
   return (
     <section id="contact" className="py-24 relative">
       <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="relative glass-card rounded-3xl p-12 md:p-16 overflow-hidden"
-        >
+        <div className="relative glass-card rounded-3xl p-12 md:p-16 overflow-hidden animate-fade-in">
           {/* Background effects */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5" />
           <div
@@ -20,34 +13,16 @@ const CTASection = () => {
           />
 
           <div className="relative z-10 text-center max-w-3xl mx-auto">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
-            >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               Ready to Transform Your Business with{" "}
               <span className="text-gradient">AI Automation?</span>
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-muted-foreground text-lg mb-8 leading-relaxed"
-            >
+            </h2>
+            <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
               Join African businesses that are already saving time, reducing costs, and growing faster with Gira AI solutions. Let's discuss how we can help you.
-            </motion.p>
+            </p>
 
             {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex items-center justify-center gap-2 mb-8"
-            >
+            <div className="flex items-center justify-center gap-2 mb-8">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
                   <Star
@@ -59,15 +34,9 @@ const CTASection = () => {
               <span className="text-muted-foreground ml-2">
                 Trusted by businesses across Africa
               </span>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-wrap justify-center gap-4"
-            >
+            <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="https://wa.me/250796916991"
                 target="_blank"
@@ -85,23 +54,17 @@ const CTASection = () => {
                 Call Now
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
-            </motion.div>
+            </div>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-muted-foreground text-sm mt-6"
-            >
+            <p className="text-muted-foreground text-sm mt-6">
               Email: <a href="mailto:gira.ai01@gmail.com" className="text-primary hover:underline">gira.ai01@gmail.com</a>
-            </motion.p>
+            </p>
           </div>
 
           {/* Decorative circles */}
           <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full border border-primary/20 animate-pulse-glow" />
           <div className="absolute -bottom-10 -left-10 w-24 h-24 rounded-full border border-primary/20 animate-pulse-glow delay-500" />
-        </motion.div>
+        </div>
       </div>
     </section>
   );

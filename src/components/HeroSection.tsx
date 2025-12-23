@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ArrowRight, MessageCircle, Phone } from "lucide-react";
 
 const HeroSection = () => {
@@ -23,47 +22,22 @@ const HeroSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-8"
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-flex items-center gap-2 glass-card rounded-full px-4 py-2 mx-auto"
-            >
+          <div className="space-y-8 animate-fade-in">
+            <div className="inline-flex items-center gap-2 glass-card rounded-full px-4 py-2 mx-auto animate-scale-in">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               <span className="text-sm text-muted-foreground">AI Automation Agency</span>
-            </motion.div>
+            </div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
-            >
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               Empowering African Businesses with{" "}
               <span className="text-gradient">AI Solutions</span>
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto"
-            >
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
               Transform challenges into opportunities. We develop and implement AI-driven solutions that help businesses save time, reduce costs, and optimize operations.
-            </motion.p>
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="flex flex-wrap items-center justify-center gap-4 pt-4"
-            >
+            <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
               <a href="#products" className="btn-hero group inline-flex items-center gap-2">
                 Explore Our Agents
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -74,29 +48,22 @@ const HeroSection = () => {
                 </div>
                 <span>Contact Us</span>
               </a>
-            </motion.div>
+            </div>
 
             {/* Features Pills */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="flex flex-wrap justify-center gap-3 pt-4"
-            >
+            <div className="flex flex-wrap justify-center gap-3 pt-4">
               {["WhatsApp Agent", "Call Agent", "24/7 Support"].map((feature, index) => (
-                <motion.div
+                <div
                   key={feature}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.7 + index * 0.1, duration: 0.4 }}
-                  className="flex items-center gap-2 glass-card rounded-full px-4 py-2"
+                  className="flex items-center gap-2 glass-card rounded-full px-4 py-2 animate-fade-in"
+                  style={{ animationDelay: `${300 + index * 100}ms` }}
                 >
                   <MessageCircle className="w-4 h-4 text-primary" />
                   <span className="text-sm font-medium">{feature}</span>
-                </motion.div>
+                </div>
               ))}
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </div>
 
