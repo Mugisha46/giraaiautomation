@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { MessageCircle, Phone, Star, Quote, Users, Target, Lightbulb, CheckCircle } from "lucide-react";
 import andaiTeam from "@/assets/andai-team.jpg";
 import andaiDelivery from "@/assets/andai-delivery.jpg";
@@ -37,6 +38,14 @@ const testimonials = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.5 },
+  },
+};
+
 const ProductsSection = () => {
   const [activeTab, setActiveTab] = useState("whatsapp");
 
@@ -49,7 +58,13 @@ const ProductsSection = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-12"
+        >
           <p className="section-label">Our Products</p>
           <h2 className="section-title">
             AI Agents that <span className="text-gradient">Transform Business</span>
@@ -57,10 +72,16 @@ const ProductsSection = () => {
           <p className="text-muted-foreground text-lg">
             Discover our suite of AI-powered agents designed specifically for African businesses.
           </p>
-        </div>
+        </motion.div>
 
         {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex flex-wrap justify-center gap-3 mb-12"
+        >
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -73,17 +94,27 @@ const ProductsSection = () => {
               {tab.label}
             </button>
           ))}
-        </div>
+        </motion.div>
 
         {/* Tab Content */}
-        <div className="animate-fade-in">
+        <motion.div
+          key={activeTab}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           {/* WhatsApp Agent Tab */}
           {activeTab === "whatsapp" && (
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/30 rounded-full px-4 py-2">
-                  <MessageCircle className="w-4 h-4 text-green-500" />
-                  <span className="text-sm font-medium text-green-400">ANDA AI - WhatsApp Agent</span>
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                className="space-y-6"
+              >
+                <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-2">
+                  <MessageCircle className="w-4 h-4 text-primary" />
+                  <span className="text-sm font-medium text-primary">ANDA AI - WhatsApp Agent</span>
                 </div>
                 <h3 className="text-3xl md:text-4xl font-bold">
                   Empower Your Business with <span className="text-gradient">ANDA AI</span>
@@ -102,8 +133,13 @@ const ProductsSection = () => {
                 <a href="#contact" className="btn-hero inline-flex items-center gap-2 mt-4">
                   Get ANDA AI
                 </a>
-              </div>
-              <div className="relative">
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="relative"
+              >
                 <div className="grid grid-cols-2 gap-4">
                   <img
                     src={andaiTeam}
@@ -122,14 +158,19 @@ const ProductsSection = () => {
                   className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-3/4 rounded-2xl shadow-2xl border border-primary/30"
                 />
                 <div className="absolute inset-0 bg-primary/10 blur-[100px] rounded-full -z-10" />
-              </div>
+              </motion.div>
             </div>
           )}
 
           {/* Call Agent Tab */}
           {activeTab === "call" && (
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                className="space-y-6"
+              >
                 <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-2">
                   <Phone className="w-4 h-4 text-primary" />
                   <span className="text-sm font-medium text-primary">AYANDA AI - Call Agent</span>
@@ -151,8 +192,13 @@ const ProductsSection = () => {
                 <a href="#contact" className="btn-hero inline-flex items-center gap-2 mt-4">
                   Get Call Agent
                 </a>
-              </div>
-              <div className="relative flex justify-center">
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="relative flex justify-center"
+              >
                 <div className="relative">
                   <div className="w-72 h-[500px] bg-card rounded-[3rem] border-4 border-border shadow-2xl overflow-hidden">
                     <div className="h-full bg-gradient-to-b from-primary/5 to-primary/20 p-6 flex flex-col items-center justify-center text-center">
@@ -171,52 +217,67 @@ const ProductsSection = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="absolute inset-0 bg-blue-500/10 blur-[100px] rounded-full -z-10" />
+                  <div className="absolute inset-0 bg-primary/10 blur-[100px] rounded-full -z-10" />
                 </div>
-              </div>
+              </motion.div>
             </div>
           )}
 
           {/* Testimonials Tab */}
           {activeTab === "testimonials" && (
-            <div className="space-y-8">
-              <div className="grid md:grid-cols-3 gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="space-y-8"
+            >
+              <div className="flex justify-center">
                 {testimonials.map((testimonial, index) => (
                   <div
                     key={index}
-                    className="glass-card rounded-2xl p-6 hover:border-primary/50 transition-all duration-300"
+                    className="glass-card rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 max-w-xl"
                   >
-                    <Quote className="w-8 h-8 text-primary/40 mb-4" />
-                    <p className="text-foreground leading-relaxed mb-6">
+                    <Quote className="w-10 h-10 text-primary/40 mb-6" />
+                    <p className="text-foreground text-lg leading-relaxed mb-6">
                       "{testimonial.content}"
                     </p>
                     <div className="flex items-center gap-1 mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+                        <Star key={i} className="w-5 h-5 text-yellow-500 fill-yellow-500" />
                       ))}
                     </div>
                     <div>
-                      <p className="font-semibold">{testimonial.name}</p>
-                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                      <p className="font-semibold text-lg">{testimonial.name}</p>
+                      <p className="text-muted-foreground">{testimonial.role}</p>
                     </div>
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           )}
 
           {/* About Us Tab */}
           {activeTab === "about" && (
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="relative">
+            <div id="about" className="grid lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                className="relative"
+              >
                 <img
                   src={giraOffice}
                   alt="Gira AI Team"
                   className="w-full rounded-2xl shadow-xl border border-border/50"
                 />
                 <div className="absolute -inset-2 border border-primary/30 rounded-2xl -z-10" />
-              </div>
-              <div className="space-y-6">
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="space-y-6"
+              >
                 <h3 className="text-3xl md:text-4xl font-bold">
                   About <span className="text-gradient">Gira AI</span>
                 </h3>
@@ -243,10 +304,10 @@ const ProductsSection = () => {
                     To empower African businesses and institutions to work smarter, faster, and more efficiently through innovative AI solutions that transform challenges into opportunities.
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
           )}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

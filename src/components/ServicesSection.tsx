@@ -1,4 +1,5 @@
-import { MessageSquare, BarChart3, Brain, Zap, GraduationCap } from "lucide-react";
+import { motion } from "framer-motion";
+import { MessageSquare, BarChart3, Brain, Zap, GraduationCap, Shield } from "lucide-react";
 
 const services = [
   {
@@ -31,7 +32,35 @@ const services = [
     description:
       "Comprehensive training programs on how to use AI effectively in all sectors. Empower your team with practical AI skills and knowledge for the future.",
   },
+  {
+    icon: Shield,
+    title: "Fraud Detection & Risk Management",
+    description:
+      "Protect your business from fraud and hidden risks with AI-powered detection systems that identify mistakes and suspicious activities in real-time.",
+  },
 ];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut" as const,
+    },
+  },
+};
 
 const ServicesSection = () => {
   return (
@@ -43,25 +72,37 @@ const ServicesSection = () => {
       />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-4xl mx-auto mb-16"
+        >
           <p className="section-label">Our Services</p>
           <h2 className="section-title">
-            AI-powered solutions in every{" "}
-            <span className="text-gradient">African business</span>
+            AI-powered solutions for{" "}
+            <span className="text-gradient">African Businesses</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
-            At Gira AI, we offer AI solutions tailored to the unique
-            needs of African businesses. Our services are designed to transform
-            your operations and customer experiences.
+          <p className="text-muted-foreground text-lg leading-relaxed">
+            At Gira AI, everything starts with understanding the real pain points of our clients. 
+            We know that behind every business or institution, there are people struggling with 
+            missed leads, unanswered calls, disorganized financial records, and hidden risks like fraud or mistakes.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {services.map((service, index) => (
-            <div
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          {services.map((service) => (
+            <motion.div
               key={service.title}
+              variants={itemVariants}
               className="glass-card rounded-2xl p-8 group hover:border-primary/50 transition-all duration-500 hover:-translate-y-1"
-              style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="w-14 h-14 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-6 group-hover:glow-soft group-hover:scale-110 transition-all duration-300">
                 <service.icon className="w-7 h-7 text-primary" />
@@ -70,9 +111,9 @@ const ServicesSection = () => {
               <p className="text-muted-foreground leading-relaxed">
                 {service.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
