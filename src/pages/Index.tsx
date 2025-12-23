@@ -1,9 +1,9 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import ServicesSection from "@/components/ServicesSection";
 import ProductsSection from "@/components/ProductsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
-import ChatWidget from "@/components/ChatWidget";
 
 const Index = () => {
   return (
@@ -11,11 +11,11 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
+        <ServicesSection />
         <ProductsSection />
         <CTASection />
       </main>
       <Footer />
-      <ChatWidget />
     </div>
   );
 };
