@@ -1,5 +1,5 @@
-import { Play } from "lucide-react";
-import aiBrainImage from "@/assets/ai-brain-hero.png";
+import { ArrowRight, MessageCircle, Phone } from "lucide-react";
+import giraOfficeImage from "@/assets/gira-ai-office.jpg";
 
 const HeroSection = () => {
   return (
@@ -24,29 +24,54 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8 animate-slide-up">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
-              Empowering Africa's Digital Future with{" "}
-              <span className="text-gradient">AI solutions</span>
+            <div className="inline-flex items-center gap-2 glass-card rounded-full px-4 py-2">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <span className="text-sm text-muted-foreground">AI Automation Agency</span>
+            </div>
+
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              Empowering African Businesses with{" "}
+              <span className="text-gradient">AI Solutions</span>
             </h1>
 
-            <div className="flex flex-wrap items-center gap-6 pt-4">
-              <button className="btn-hero">Get Started</button>
-              <button className="btn-ghost-hero group">
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
+              Transform challenges into opportunities. We develop and implement AI-driven solutions that help businesses save time, reduce costs, and optimize operations.
+            </p>
+
+            <div className="flex flex-wrap items-center gap-4 pt-4">
+              <a href="#products" className="btn-hero group inline-flex items-center gap-2">
+                Explore Our Agents
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a href="#contact" className="btn-ghost-hero group">
                 <div className="w-12 h-12 rounded-full bg-secondary border border-border flex items-center justify-center group-hover:border-primary group-hover:glow-soft transition-all duration-300">
-                  <Play className="w-5 h-5 text-foreground fill-foreground ml-1" />
+                  <Phone className="w-5 h-5 text-foreground" />
                 </div>
-                <span>Play Video</span>
-              </button>
+                <span>Contact Us</span>
+              </a>
+            </div>
+
+            {/* Features Pills */}
+            <div className="flex flex-wrap gap-3 pt-4">
+              {["WhatsApp Agent", "Call Agent", "24/7 Support"].map((feature) => (
+                <div
+                  key={feature}
+                  className="flex items-center gap-2 glass-card rounded-full px-4 py-2"
+                >
+                  <MessageCircle className="w-4 h-4 text-primary" />
+                  <span className="text-sm font-medium">{feature}</span>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Right Content - AI Brain Image */}
+          {/* Right Content - Office Image */}
           <div className="relative animate-slide-up delay-200 hidden lg:block">
-            <div className="relative animate-float">
+            <div className="relative">
               <img
-                src={aiBrainImage}
-                alt="AI Brain Illustration"
-                className="w-full max-w-xl mx-auto drop-shadow-2xl"
+                src={giraOfficeImage}
+                alt="Gira AI Team"
+                className="w-full max-w-xl mx-auto rounded-2xl shadow-2xl border border-border/50"
               />
               {/* Glow effect behind image */}
               <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full -z-10 scale-75" />

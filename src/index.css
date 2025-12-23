@@ -6,73 +6,73 @@
 
 @layer base {
   :root {
-    --background: 222 47% 5%;
+    --background: 220 20% 4%;
     --foreground: 0 0% 100%;
 
-    --card: 222 47% 8%;
+    --card: 220 20% 7%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 222 47% 8%;
+    --popover: 220 20% 7%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 210 85% 53%;
+    --primary: 145 70% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 222 47% 12%;
+    --secondary: 220 20% 12%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 222 30% 15%;
+    --muted: 220 20% 15%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 210 85% 53%;
+    --accent: 145 70% 45%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 222 30% 18%;
-    --input: 222 30% 18%;
-    --ring: 210 85% 53%;
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 145 70% 45%;
 
     --radius: 0.75rem;
 
-    /* Custom design tokens */
-    --gradient-radial-left: radial-gradient(circle at -10% 50%, hsl(210 85% 53% / 0.3) 0%, transparent 50%);
-    --gradient-radial-right: radial-gradient(ellipse at 110% 50%, hsl(210 85% 53% / 0.25) 0%, transparent 50%);
-    --gradient-hero: linear-gradient(135deg, hsl(222 47% 3%) 0%, hsl(222 47% 8%) 50%, hsl(222 47% 5%) 100%);
-    --glow-primary: 0 0 60px hsl(210 85% 53% / 0.4);
-    --glow-soft: 0 0 40px hsl(210 85% 53% / 0.2);
+    /* Custom design tokens - Green theme for Gira AI */
+    --gradient-radial-left: radial-gradient(circle at -10% 50%, hsl(145 70% 45% / 0.3) 0%, transparent 50%);
+    --gradient-radial-right: radial-gradient(ellipse at 110% 50%, hsl(145 70% 45% / 0.25) 0%, transparent 50%);
+    --gradient-hero: linear-gradient(135deg, hsl(220 20% 3%) 0%, hsl(220 20% 8%) 50%, hsl(220 20% 5%) 100%);
+    --glow-primary: 0 0 60px hsl(145 70% 45% / 0.4);
+    --glow-soft: 0 0 40px hsl(145 70% 45% / 0.2);
 
-    --sidebar-background: 222 47% 5%;
+    --sidebar-background: 220 20% 5%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 210 85% 53%;
+    --sidebar-primary: 145 70% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 222 47% 12%;
+    --sidebar-accent: 220 20% 12%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 222 30% 18%;
-    --sidebar-ring: 210 85% 53%;
+    --sidebar-border: 220 20% 18%;
+    --sidebar-ring: 145 70% 45%;
   }
 
   .dark {
-    --background: 222 47% 5%;
+    --background: 220 20% 4%;
     --foreground: 0 0% 100%;
-    --card: 222 47% 8%;
+    --card: 220 20% 7%;
     --card-foreground: 0 0% 100%;
-    --popover: 222 47% 8%;
+    --popover: 220 20% 7%;
     --popover-foreground: 0 0% 100%;
-    --primary: 210 85% 53%;
+    --primary: 145 70% 45%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 222 47% 12%;
+    --secondary: 220 20% 12%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 222 30% 15%;
+    --muted: 220 20% 15%;
     --muted-foreground: 215 20% 65%;
-    --accent: 210 85% 53%;
+    --accent: 145 70% 45%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 100%;
-    --border: 222 30% 18%;
-    --input: 222 30% 18%;
-    --ring: 210 85% 53%;
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 145 70% 45%;
   }
 }
 
@@ -93,7 +93,7 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-emerald-400;
   }
 
   .glow-primary {
@@ -110,8 +110,8 @@
 
   .circuit-pattern {
     background-image: 
-      linear-gradient(90deg, hsl(210 85% 53% / 0.03) 1px, transparent 1px),
-      linear-gradient(hsl(210 85% 53% / 0.03) 1px, transparent 1px);
+      linear-gradient(90deg, hsl(145 70% 45% / 0.03) 1px, transparent 1px),
+      linear-gradient(hsl(145 70% 45% / 0.03) 1px, transparent 1px);
     background-size: 60px 60px;
   }
 }
@@ -140,6 +140,15 @@
 
   .btn-ghost-hero {
     @apply flex items-center gap-3 text-foreground font-medium transition-all duration-300 hover:text-primary;
+  }
+
+  .tab-button {
+    @apply px-6 py-3 text-sm font-semibold transition-all duration-300 rounded-xl
+           border border-transparent hover:border-primary/30;
+  }
+
+  .tab-button-active {
+    @apply bg-primary text-primary-foreground glow-soft;
   }
 }
 
