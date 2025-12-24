@@ -13,11 +13,15 @@ const navItems = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const sections = navItems.map((item) => item.href.replace("#", ""));
       const scrollPosition = window.scrollY + 150;
+
+      // Track if scrolled past threshold
+      setIsScrolled(window.scrollY > 50);
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.getElementById(sections[i]);
@@ -47,7 +51,11 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
         <a href="#home" onClick={() => handleNavClick("#home")} className="flex items-center gap-2 group">
-          <img src={giraLogo} alt="Gira AI Logo" className="w-14 h-14 object-contain" />
+          <div className={`w-14 h-14 rounded-full overflow-hidden transition-all duration-300 ${
+            isScrolled ? "bg-background shadow-lg ring-2 ring-primary/20" : "bg-transparent"
+          }`}>
+            <img src={giraLogo} alt="Gira AI Logo" className="w-full h-full object-contain p-1" />
+          </div>
           <div className="flex flex-col">
             <span className="text-foreground font-bold text-lg leading-tight">
               GIRA AI

@@ -14,8 +14,10 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="space-y-4">
-            <a href="#home" className="flex items-center gap-3">
-              <img src={giraLogo} alt="Gira AI Logo" className="w-14 h-14 object-contain" />
+          <a href="#home" className="flex items-center gap-3">
+            <div className="w-14 h-14 rounded-full overflow-hidden bg-background shadow-lg ring-2 ring-primary/20">
+              <img src={giraLogo} alt="Gira AI Logo" className="w-full h-full object-contain p-1" />
+            </div>
               <div className="flex flex-col">
                 <span className="text-foreground font-bold text-lg leading-tight">
                   GIRA AI
