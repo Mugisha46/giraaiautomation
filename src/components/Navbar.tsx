@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Handshake } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import giraLogo from "@/assets/gira-ai-logo.png";
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -45,9 +46,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
         <a href="#home" onClick={() => handleNavClick("#home")} className="flex items-center gap-2 group">
-          <div className="w-10 h-10 rounded-xl bg-primary/20 border border-primary flex items-center justify-center group-hover:glow-soft transition-all duration-300">
-            <Handshake className="w-5 h-5 text-primary" />
-          </div>
+          <img src={giraLogo} alt="Gira AI Logo" className="w-10 h-10 object-contain" />
           <div className="flex flex-col">
             <span className="text-foreground font-bold text-lg leading-tight">
               GIRA AI
