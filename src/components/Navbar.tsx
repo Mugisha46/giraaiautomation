@@ -51,10 +51,10 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
         <a href="#home" onClick={() => handleNavClick("#home")} className="flex items-center gap-2 group">
-          <div className={`w-14 h-14 rounded-full overflow-hidden transition-all duration-300 ${
-            isScrolled ? "bg-background shadow-lg ring-2 ring-primary/20" : "bg-transparent"
+          <div className={`w-12 h-12 rounded-full overflow-hidden transition-all duration-300 flex items-center justify-center ${
+            isScrolled ? "bg-background shadow-lg ring-2 ring-primary/20" : "bg-background/80 ring-1 ring-primary/10"
           }`}>
-            <img src={giraLogo} alt="Gira AI Logo" className="w-full h-full object-contain p-1" />
+            <img src={giraLogo} alt="Gira AI Logo" className="w-10 h-10 object-cover rounded-full" />
           </div>
           <div className="flex flex-col">
             <span className="text-foreground font-bold text-lg leading-tight">
