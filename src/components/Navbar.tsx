@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import giraLogo from "@/assets/gira-ai-logo.png";
+import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -46,7 +47,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
         <a href="#home" onClick={() => handleNavClick("#home")} className="flex items-center gap-2 group">
-          <img src={giraLogo} alt="Gira AI Logo" className="w-10 h-10 object-contain" />
+          <img src={giraLogo} alt="Gira AI Logo" className="w-14 h-14 object-contain" />
           <div className="flex flex-col">
             <span className="text-foreground font-bold text-lg leading-tight">
               GIRA AI
@@ -58,7 +59,7 @@ const Navbar = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center">
+        <div className="hidden md:flex items-center gap-4">
           <div className="glass-card rounded-full px-2 py-2 flex items-center gap-1">
             {navItems.map((item) => (
               <button
@@ -74,15 +75,19 @@ const Navbar = () => {
               </button>
             ))}
           </div>
+          <ThemeToggle />
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-foreground p-2"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-foreground p-2"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}

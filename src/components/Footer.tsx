@@ -3,9 +3,9 @@ import {
   Phone,
   MapPin,
   Instagram,
-  Handshake,
   MessageCircle,
 } from "lucide-react";
+import giraLogo from "@/assets/gira-ai-logo.png";
 
 const Footer = () => {
   return (
@@ -14,10 +14,8 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="space-y-4">
-            <a href="#home" className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-xl bg-primary/20 border border-primary flex items-center justify-center">
-                <Handshake className="w-5 h-5 text-primary" />
-              </div>
+            <a href="#home" className="flex items-center gap-3">
+              <img src={giraLogo} alt="Gira AI Logo" className="w-14 h-14 object-contain" />
               <div className="flex flex-col">
                 <span className="text-foreground font-bold text-lg leading-tight">
                   GIRA AI
