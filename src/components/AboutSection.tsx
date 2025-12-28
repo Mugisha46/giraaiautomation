@@ -24,23 +24,7 @@ const AboutSection = () => {
 
         {/* Content */}
         <div className="animate-fade-in" style={{ animationDelay: "100ms" }}>
-          {/* Images on top */}
-          <div className="relative mb-12 grid md:grid-cols-2 gap-6">
-            <img
-              src={team1}
-              alt="Gira AI Team"
-              className="w-full rounded-2xl shadow-xl border border-border/50"
-            />
-            <img
-              src={team2}
-              alt="Gira AI Team"
-              className="w-full rounded-2xl shadow-xl border border-border/50"
-            />
-            <div className="absolute -inset-2 border border-primary/30 rounded-2xl -z-10" />
-            <div className="absolute inset-0 bg-primary/10 blur-[100px] rounded-full -z-20" />
-          </div>
-
-          {/* Mission and Vision below */}
+          {/* Mission and Vision on top */}
           <div className="max-w-3xl mx-auto space-y-6">
             <h3 className="text-3xl md:text-4xl font-bold text-center">
               About <span className="text-gradient">Gira AI</span>
@@ -70,6 +54,22 @@ const AboutSection = () => {
                 </p>
               </div>
             </div>
+          </div>
+
+          {/* Images below */}
+          <div className="relative mt-12 grid md:grid-cols-2 gap-6">
+            <img
+              src={team1}
+              alt="Gira AI Team"
+              className="w-full rounded-2xl shadow-xl border border-border/50"
+            />
+            <img
+              src={team2}
+              alt="Gira AI Team"
+              className="w-full rounded-2xl shadow-xl border border-border/50"
+            />
+            <div className="absolute -inset-2 border border-primary/30 rounded-2xl -z-10" />
+            <div className="absolute inset-0 bg-primary/10 blur-[100px] rounded-full -z-20" />
           </div>
         </div>
       </div>
