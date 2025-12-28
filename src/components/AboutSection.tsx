@@ -56,8 +56,8 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* Images below */}
-          <div className="relative mt-12 grid md:grid-cols-2 gap-6">
+          {/* Images below - stacked vertically */}
+          <div className="relative mt-12 max-w-3xl mx-auto space-y-6">
             <img
               src={team1}
               alt="Gira AI Team"
