@@ -56,7 +56,7 @@ const Navbar = () => {
           <div className={`w-12 h-12 rounded-full overflow-hidden transition-all duration-300 flex items-center justify-center ${
             isScrolled ? "bg-background shadow-lg ring-2 ring-primary/20" : "bg-background/80 ring-1 ring-primary/10"
           }`}>
-            <img src={giraLogo} alt="Gira AI Logo" className="w-10 h-10 object-cover rounded-full" />
+            <img src={giraLogo} alt="Gira AI Logo" className="w-10 h-10 object-cover rounded-full scale-[3]" />
           </div>
           <div className="flex flex-col">
             <span className="text-foreground font-bold text-lg leading-tight">
