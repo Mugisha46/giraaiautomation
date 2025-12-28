@@ -1,6 +1,5 @@
 import { ArrowRight, MessageCircle, Phone } from "lucide-react";
 import aiBrainHero from "@/assets/ai-brain-hero.png";
-import giraAiOffice from "@/assets/gira-ai-office.jpg";
 
 const HeroSection = () => {
   return (
@@ -8,17 +7,12 @@ const HeroSection = () => {
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden pt-20"
     >
-      {/* Background Images with Crossfade */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
           src={aiBrainHero} 
           alt="" 
-          className="absolute inset-0 w-full h-full object-cover opacity-20 animate-crossfade-1"
-        />
-        <img 
-          src={giraAiOffice} 
-          alt="" 
-          className="absolute inset-0 w-full h-full object-cover opacity-20 animate-crossfade-2"
+          className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
       </div>
 
