@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MessageCircle, Phone, Star, Quote, CheckCircle } from "lucide-react";
+import { MessageCircle, Phone, CheckCircle } from "lucide-react";
 import andaiTeam from "@/assets/andai-team.jpg";
 import andaiDelivery from "@/assets/andai-delivery.jpg";
 import andaiWhatsapp from "@/assets/andai-whatsapp.png";
@@ -7,7 +7,6 @@ import andaiWhatsapp from "@/assets/andai-whatsapp.png";
 const tabs = [
   { id: "whatsapp", label: "WhatsApp Agent", icon: MessageCircle },
   { id: "call", label: "Call Agent", icon: Phone },
-  { id: "testimonials", label: "Testimonials", icon: Star },
 ];
 
 const whatsappFeatures = [
@@ -24,15 +23,6 @@ const callAgentFeatures = [
   "Lead qualification and follow-ups",
   "Natural conversation handling",
   "Real-time call analytics and insights",
-];
-
-const testimonials = [
-  {
-    name: "Gobuy",
-    role: "E-Commerce Company",
-    content: "Gira AI has transformed our customer service operations. The WhatsApp agent handles orders seamlessly and our customers love the instant responses. Highly recommended for any business looking to scale!",
-    rating: 5,
-  },
 ];
 
 const ProductsSection = () => {
@@ -171,34 +161,6 @@ const ProductsSection = () => {
                   </div>
                   <div className="absolute inset-0 bg-primary/10 blur-[100px] rounded-full -z-10" />
                 </div>
-              </div>
-            </div>
-          )}
-
-          {/* Testimonials Tab */}
-          {activeTab === "testimonials" && (
-            <div className="space-y-8">
-              <div className="flex justify-center">
-                {testimonials.map((testimonial, index) => (
-                  <div
-                    key={index}
-                    className="glass-card rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 max-w-xl"
-                  >
-                    <Quote className="w-10 h-10 text-primary/40 mb-6" />
-                    <p className="text-foreground text-lg leading-relaxed mb-6">
-                      "{testimonial.content}"
-                    </p>
-                    <div className="flex items-center gap-1 mb-4">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-yellow-500 fill-yellow-500" />
-                      ))}
-                    </div>
-                    <div>
-                      <p className="font-semibold text-lg">{testimonial.name}</p>
-                      <p className="text-muted-foreground">{testimonial.role}</p>
-                    </div>
-                  </div>
-                ))}
               </div>
             </div>
           )}
