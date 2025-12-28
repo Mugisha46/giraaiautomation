@@ -1,5 +1,6 @@
 import { Target, Lightbulb } from "lucide-react";
-import giraOffice from "@/assets/gira-ai-office.jpg";
+import team1 from "@/assets/team-1.png";
+import team2 from "@/assets/team-2.png";
 
 const AboutSection = () => {
   return (
@@ -12,7 +13,7 @@ const AboutSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
-          <p className="section-label">About Us</p>
+          <p className="section-label">AboutUs</p>
           <h2 className="section-title">
             Empowering Africa with <span className="text-gradient">AI Innovation</span>
           </h2>
@@ -23,9 +24,14 @@ const AboutSection = () => {
 
         {/* Content */}
         <div className="grid lg:grid-cols-2 gap-12 items-center animate-fade-in" style={{ animationDelay: "100ms" }}>
-          <div className="relative">
+          <div className="relative space-y-4">
             <img
-              src={giraOffice}
+              src={team1}
+              alt="Gira AI Team"
+              className="w-full rounded-2xl shadow-xl border border-border/50"
+            />
+            <img
+              src={team2}
               alt="Gira AI Team"
               className="w-full rounded-2xl shadow-xl border border-border/50"
             />
