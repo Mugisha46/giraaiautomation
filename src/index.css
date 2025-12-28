@@ -195,27 +195,31 @@
 .delay-400 { animation-delay: 400ms; }
 .delay-500 { animation-delay: 500ms; }
 
-/* Hero Background Ken Burns Effect */
-@keyframes kenburns-1 {
-  0% { opacity: 0.2; transform: scale(1); }
-  45% { opacity: 0.2; transform: scale(1.15); }
-  50% { opacity: 0; transform: scale(1.15); }
-  95% { opacity: 0; transform: scale(1); }
-  100% { opacity: 0.2; transform: scale(1); }
+/* Hero Background Ken Burns Effect - Single Image Dual Transition */
+@keyframes kenburns {
+  0% {
+    transform: scale(1) translateX(0);
+    opacity: 0.2;
+  }
+  25% {
+    transform: scale(1.15) translateX(-2%);
+    opacity: 0.25;
+  }
+  50% {
+    transform: scale(1.1) translateX(2%);
+    opacity: 0.15;
+  }
+  75% {
+    transform: scale(1.2) translateX(-1%);
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(1) translateX(0);
+    opacity: 0.2;
+  }
 }
 
-@keyframes kenburns-2 {
-  0% { opacity: 0; transform: scale(1.15); }
-  45% { opacity: 0; transform: scale(1); }
-  50% { opacity: 0.2; transform: scale(1); }
-  95% { opacity: 0.2; transform: scale(1.15); }
-  100% { opacity: 0; transform: scale(1.15); }
-}
-
-.animate-crossfade-1 {
-  animation: kenburns-1 6s ease-in-out infinite;
-}
-
-.animate-crossfade-2 {
-  animation: kenburns-2 6s ease-in-out infinite;
+.animate-kenburns {
+  animation: kenburns 7s ease-in-out infinite;
+  animation-duration: 7000ms;
 }

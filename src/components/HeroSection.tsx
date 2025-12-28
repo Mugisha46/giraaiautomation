@@ -7,12 +7,12 @@ const HeroSection = () => {
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden pt-20"
     >
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Image with Ken Burns Effect */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <img 
           src={aiBrainHero} 
           alt="" 
-          className="absolute inset-0 w-full h-full object-cover opacity-20"
+          className="absolute inset-0 w-full h-full object-cover opacity-20 animate-kenburns"
         />
       </div>
 
