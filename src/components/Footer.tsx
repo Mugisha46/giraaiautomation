@@ -4,6 +4,7 @@ import {
   MapPin,
   Instagram,
   MessageCircle,
+  Linkedin,
 } from "lucide-react";
 import giraLogo from "@/assets/gira-ai-logo.png";
 
@@ -56,6 +57,14 @@ const Footer = () => {
                 className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
               >
                 <MessageCircle className="w-5 h-5" />
+              </a>
+              <a
+                href="https://rw.linkedin.com/in/gira-ai-14423629a"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
+              >
+                <Linkedin className="w-5 h-5" />
               </a>
             </div>
           </div>
