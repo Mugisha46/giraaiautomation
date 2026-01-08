@@ -9,7 +9,7 @@ const teamMembers = [
   { name: "Ngarambe Karly", title: "Sales Manager", image: "" },
   { name: "Niyibizi Teddy", title: "CTO", image: "" },
   { name: "Irimaso Camarade", title: "Consultancy Manager", image: "" },
-  { name: "Cyusa Keith", title: "Marketing Manager", image: "" },
+  { name: "Cyusa Keith", title: "V.Marketing Manager", image: "" },
   { name: "Ishimwe D. Divin", title: "Developer", image: "" },
   { name: "Manzi J. Desire", title: "Developer", image: "" },
 ];
