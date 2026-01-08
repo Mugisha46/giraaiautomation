@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, LogIn } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import giraLogo from "@/assets/gira-ai-logo.png";
 import ThemeToggle from "./ThemeToggle";
+import { Button } from "./ui/button";
 
 const navItems = [
   { name: "Home", href: "#home", isPage: false },
@@ -115,6 +116,13 @@ const Navbar = () => {
             ))}
           </div>
           <ThemeToggle />
+          <Button 
+            onClick={() => navigate("/auth")}
+            className="rounded-full px-6 gap-2"
+          >
+            <LogIn size={16} />
+            Login
+          </Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -145,6 +153,16 @@ const Navbar = () => {
               {item.name}
             </button>
           ))}
+          <Button 
+            onClick={() => {
+              setIsOpen(false);
+              navigate("/auth");
+            }}
+            className="w-full mt-3 rounded-full gap-2"
+          >
+            <LogIn size={16} />
+            Login
+          </Button>
         </div>
       )}
     </nav>
