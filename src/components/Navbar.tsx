@@ -1,25 +1,28 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 import giraLogo from "@/assets/gira-ai-logo.png";
 import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
-  { name: "Home", href: "#home" },
-  { name: "Services", href: "#services" },
-  { name: "Products", href: "#products" },
-  { name: "AboutUs", href: "#about" },
-  { name: "Testimonials", href: "#testimonials" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "#home", isPage: false },
+  { name: "Services", href: "#services", isPage: false },
+  { name: "Products", href: "#products", isPage: false },
+  { name: "AboutUs", href: "/about", isPage: true },
+  { name: "Testimonials", href: "#testimonials", isPage: false },
+  { name: "Contact", href: "#contact", isPage: false },
 ];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map((item) => item.href.replace("#", ""));
+      const sections = navItems.filter(item => !item.isPage).map((item) => item.href.replace("#", ""));
       const scrollPosition = window.scrollY + 150;
 
       // Track if scrolled past threshold
@@ -39,20 +42,46 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (item: typeof navItems[0]) => {
     setIsOpen(false);
-    const sectionId = href.replace("#", "");
+    
+    if (item.isPage) {
+      navigate(item.href);
+      return;
+    }
+    
+    // If we're on the about page and clicking a section, go home first
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const sectionId = item.href.replace("#", "");
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+      return;
+    }
+    
+    const sectionId = item.href.replace("#", "");
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
   };
 
+  const isActive = (item: typeof navItems[0]) => {
+    if (item.isPage) {
+      return location.pathname === item.href;
+    }
+    return location.pathname === "/" && activeSection === item.href.replace("#", "");
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4">
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" onClick={() => handleNavClick("#home")} className="flex items-center gap-2 group">
+        <a href="#home" onClick={() => handleNavClick(navItems[0])} className="flex items-center gap-2 group">
           <div className={`w-12 h-12 rounded-full overflow-hidden transition-all duration-300 flex items-center justify-center ${
             isScrolled ? "bg-background shadow-lg ring-2 ring-primary/20" : "bg-background/80 ring-1 ring-primary/10"
           }`}>
@@ -74,9 +103,9 @@ const Navbar = () => {
             {navItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => handleNavClick(item.href)}
+                onClick={() => handleNavClick(item)}
                 className={`nav-pill ${
-                  activeSection === item.href.replace("#", "")
+                  isActive(item)
                     ? "nav-pill-active"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                 }`}
@@ -106,9 +135,9 @@ const Navbar = () => {
           {navItems.map((item) => (
             <button
               key={item.name}
-              onClick={() => handleNavClick(item.href)}
+              onClick={() => handleNavClick(item)}
               className={`block w-full text-left py-3 px-4 rounded-lg transition-all ${
-                activeSection === item.href.replace("#", "")
+                isActive(item)
                   ? "text-primary bg-primary/10"
                   : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
               }`}
