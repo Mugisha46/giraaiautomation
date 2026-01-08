@@ -3,7 +3,7 @@ import { MessageSquare, Zap, GraduationCap } from "lucide-react";
 const services = [
   {
     icon: MessageSquare,
-    title: "Conversational AI",
+    title: "Conversational Agent",
     description:
       "AI-powered chatbots for multiple platforms (Websites, Apps). We help businesses enable a fast and excellent 24/7 customer service experience.",
   },
