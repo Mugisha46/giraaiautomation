@@ -11,7 +11,7 @@ const AboutSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
-          <p className="section-label">AboutUs</p>
+         
           <h2 className="section-title">
             Empowering Africa with <span className="text-gradient">AI Innovation</span>
           </h2>
