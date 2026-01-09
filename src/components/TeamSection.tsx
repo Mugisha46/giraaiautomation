@@ -1,17 +1,27 @@
 import { motion } from "framer-motion";
 import { User } from "lucide-react";
 
+import teamDavid from "@/assets/team-david.jpg";
+import teamBertrand from "@/assets/team-bertrand.jpg";
+import teamLionel from "@/assets/team-lionel.jpg";
+import teamFrank from "@/assets/team-frank.jpg";
+import teamNgarambe from "@/assets/team-ngarambe.jpg";
+import teamTeddy from "@/assets/team-teddy.jpg";
+import teamCamarade from "@/assets/team-camarade.jpg";
+import teamKeith from "@/assets/team-keith.jpg";
+import teamDesire from "@/assets/team-desire.jpg";
+
 const teamMembers = [
-  { name: "Shema Y. David", title: "CEO & Founder", image: "" },
-  { name: "Kayigamba Bertrand", title: "Consultancy Manager", image: "" },
-  { name: "Rwigamba Lionel", title: "Branding Manager", image: "" },
-  { name: "Mugisha Frank", title: "Marketing Manager", image: "" },
-  { name: "Ngarambe Karly", title: "Sales Manager", image: "" },
-  { name: "Niyibizi Teddy", title: "CTO", image: "" },
-  { name: "Irimaso Camarade", title: "V.Consultancy Manager", image: "" },
-  { name: "Cyusa Keith", title: "V.Marketing Manager", image: "" },
+  { name: "Shema Y. David", title: "CEO & Founder", image: teamDavid },
+  { name: "Kayigamba Bertrand", title: "Consultancy Manager", image: teamBertrand },
+  { name: "Rwigamba Lionel", title: "Branding Manager", image: teamLionel },
+  { name: "Mugisha Frank", title: "Marketing Manager", image: teamFrank },
+  { name: "Ngarambe Karly", title: "Sales Manager", image: teamNgarambe },
+  { name: "Niyibizi Teddy", title: "CTO", image: teamTeddy },
+  { name: "Irimaso Camarade", title: "V.Consultancy Manager", image: teamCamarade },
+  { name: "Cyusa Keith", title: "V.Marketing Manager", image: teamKeith },
   { name: "Ishimwe D. Divin", title: "Developer", image: "" },
-  { name: "Manzi J. Desire", title: "Developer", image: "" },
+  { name: "Manzi J. Desire", title: "Developer", image: teamDesire },
 ];
 
 const TeamSection = () => {
