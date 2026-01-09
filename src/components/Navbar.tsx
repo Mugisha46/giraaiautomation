@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, LogIn } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import giraLogo from "@/assets/gira-ai-logo.png";
 import ThemeToggle from "./ThemeToggle";
+import { Button } from "./ui/button";
 
 const navItems = [
   { name: "Home", href: "#home", isPage: false },
@@ -110,10 +111,14 @@ const Navbar = () => {
             ? "bg-background/80 backdrop-blur-xl border border-border shadow-lg" 
             : "bg-transparent"
         }`}>
-          {/* Logo */}
+          {/* Logo - Restored round style with scale */}
           <a href="#home" onClick={() => handleNavClick(navItems[0])} className="flex items-center gap-3 group">
-            <div className="w-11 h-11 rounded-xl overflow-hidden bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center border border-primary/20 group-hover:border-primary/40 transition-all">
-              <img src={giraLogo} alt="Gira AI Logo" className="w-9 h-9 object-cover rounded-lg scale-[2.5]" />
+            <div className={`w-12 h-12 rounded-full overflow-hidden flex items-center justify-center transition-all duration-300 ${
+              isScrolled 
+                ? "bg-background shadow-lg ring-2 ring-primary/20" 
+                : "bg-background/50 backdrop-blur-sm"
+            }`}>
+              <img src={giraLogo} alt="Gira AI Logo" className="w-10 h-10 object-cover rounded-full scale-[2.5]" />
             </div>
             <div className="flex flex-col">
               <span className="text-foreground font-bold text-lg leading-tight tracking-tight">
@@ -142,8 +147,12 @@ const Navbar = () => {
                 </button>
               ))}
             </div>
-            <div className="ml-2">
+            <div className="ml-2 flex items-center gap-2">
               <ThemeToggle />
+              <Button variant="outline" size="sm" className="gap-2 rounded-lg">
+                <LogIn className="w-4 h-4" />
+                Login
+              </Button>
             </div>
           </div>
 
@@ -177,6 +186,10 @@ const Navbar = () => {
                 {item.name}
               </button>
             ))}
+            <Button variant="outline" className="w-full mt-3 gap-2">
+              <LogIn className="w-4 h-4" />
+              Login
+            </Button>
           </div>
         </div>
       )}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MessageCircle, Phone, CheckCircle } from "lucide-react";
 import andaiTeam from "@/assets/andai-team.jpg";
 import andaiDelivery from "@/assets/andai-delivery.jpg";
@@ -28,6 +28,15 @@ const callAgentFeatures = [
 const ProductsSection = () => {
   const [activeTab, setActiveTab] = useState("whatsapp");
 
+  // Auto-switch tabs every 3500ms
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveTab((prev) => (prev === "whatsapp" ? "call" : "whatsapp"));
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="products" className="py-24 relative overflow-hidden">
       <div
@@ -47,18 +56,24 @@ const ProductsSection = () => {
           </p>
         </div>
 
-        {/* Tabs */}
+        {/* Tabs with highlight animation */}
         <div className="flex flex-wrap justify-center gap-3 mb-12 animate-fade-in" style={{ animationDelay: "100ms" }}>
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`tab-button flex items-center gap-2 ${
-                activeTab === tab.id ? "tab-button-active" : "text-muted-foreground hover:text-foreground bg-card/50"
+              className={`tab-button flex items-center gap-2 relative overflow-hidden transition-all duration-300 ${
+                activeTab === tab.id 
+                  ? "tab-button-active ring-2 ring-primary ring-offset-2 ring-offset-background" 
+                  : "text-muted-foreground hover:text-foreground bg-card/50"
               }`}
             >
-              <tab.icon className="w-4 h-4" />
-              {tab.label}
+              {/* Highlight pulse effect for active tab */}
+              {activeTab === tab.id && (
+                <span className="absolute inset-0 bg-primary/20 animate-pulse" />
+              )}
+              <tab.icon className={`w-4 h-4 relative z-10 ${activeTab === tab.id ? "animate-bounce" : ""}`} />
+              <span className="relative z-10">{tab.label}</span>
             </button>
           ))}
         </div>
