@@ -32,7 +32,7 @@ const ProductsSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveTab((prev) => (prev === "whatsapp" ? "call" : "whatsapp"));
-    }, 3500);
+    }, 4500);
 
     return () => clearInterval(interval);
   }, []);
