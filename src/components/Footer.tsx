@@ -33,11 +33,11 @@ const Footer = () => {
                   <img src={giraLogo} alt="Gira AI Logo" className="w-10 h-10 object-cover rounded-full scale-[2.5]" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[10px] text-primary tracking-widest uppercase">
+                  <span className="text-[20px] text-primary tracking-widest uppercase">
                     GIRA AI
                   </span>
                   <span className="text-[10px] text-primary tracking-widest uppercase">
-                    AI Automation Agency
+                    Automation Agency
                   </span>
                 </div>
               </a>
