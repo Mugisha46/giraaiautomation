@@ -125,7 +125,7 @@ const Navbar = () => {
                 GIRA AI
               </span>
               <span className="text-[9px] text-muted-foreground tracking-[0.2em] uppercase">
-                AI Automation
+                AI Automation Agency
               </span>
             </div>
           </a>
