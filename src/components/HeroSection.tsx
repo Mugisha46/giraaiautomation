@@ -29,14 +29,14 @@ const HeroSection = () => {
       className="relative min-h-screen flex items-center overflow-hidden pt-20"
     >
       {/* Background Video - Looping from 4s, zoomed out 30% */}
-      <div className="absolute inset-0 z-0 overflow-hidden flex items-center justify-center">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <video 
           ref={videoRef}
           src={heroVideo}
           autoPlay
           muted
           playsInline
-          className="absolute w-[140%] h-[140%] object-cover opacity-30 scale-[0.7]"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[143%] min-h-[143%] object-cover opacity-30 scale-[0.7]"
         />
       </div>
 
