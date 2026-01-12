@@ -1,5 +1,5 @@
 import { ArrowRight, MessageCircle, Phone } from "lucide-react";
-import aiBrainHero from "@/assets/ai-brain-hero.png";
+import heroVideo from "@/assets/hero-video.mp4";
 
 const HeroSection = () => {
   return (
@@ -7,12 +7,15 @@ const HeroSection = () => {
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden pt-20"
     >
-      {/* Background Image with Ken Burns Effect */}
+      {/* Background Video - Looping */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <img 
-          src={aiBrainHero} 
-          alt="" 
-          className="absolute inset-0 w-full h-full object-cover opacity-20 animate-kenburns"
+        <video 
+          src={heroVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
         />
       </div>
 

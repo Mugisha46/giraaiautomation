@@ -16,8 +16,8 @@ const Footer = () => {
           alt="" 
           className="w-full h-full object-cover"
         />
-        {/* Dark mode blur overlay */}
-        <div className="absolute inset-0 backdrop-blur-[3px] bg-background/80 dark:bg-background/85" />
+        {/* Overlay without blur */}
+        <div className="absolute inset-0 bg-background/75 dark:bg-background/80" />
 
 
       </div>
