@@ -1,42 +1,21 @@
 import { ArrowRight, MessageCircle, Phone } from "lucide-react";
-import { useRef, useEffect } from "react";
 import heroVideo from "@/assets/hero-video.mp4";
 
 const HeroSection = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const START_TIME = 4; // Start video at 4 seconds
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    // Set initial start time
-    video.currentTime = START_TIME;
-
-    // When video ends, loop back to START_TIME
-    const handleEnded = () => {
-      video.currentTime = START_TIME;
-      video.play();
-    };
-
-    video.addEventListener('ended', handleEnded);
-    return () => video.removeEventListener('ended', handleEnded);
-  }, []);
-
   return (
     <section
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden pt-20"
     >
-      {/* Background Video - Looping from 4s, zoomed out 30% */}
+      {/* Background Video - Looping */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video 
-          ref={videoRef}
           src={heroVideo}
           autoPlay
+          loop
           muted
           playsInline
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[143%] min-h-[143%] object-cover opacity-30 scale-[0.7]"
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
         />
       </div>
 
