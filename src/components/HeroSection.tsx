@@ -1,7 +1,24 @@
 import { ArrowRight, MessageCircle, Phone } from "lucide-react";
+import { useRef, useEffect } from "react";
 import heroVideo from "@/assets/hero-video.mp4";
 
 const HeroSection = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.currentTime = 4;
+    }
+  }, []);
+
+  const handleTimeUpdate = () => {
+    const video = videoRef.current;
+    if (video && video.currentTime < 4) {
+      video.currentTime = 4;
+    }
+  };
+
   return (
     <section
       id="home"
@@ -10,11 +27,13 @@ const HeroSection = () => {
       {/* Background Video - Looping */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video 
+          ref={videoRef}
           src={heroVideo}
           autoPlay
           loop
           muted
           playsInline
+          onTimeUpdate={handleTimeUpdate}
           className="absolute inset-0 w-full h-full object-cover opacity-30"
         />
       </div>
