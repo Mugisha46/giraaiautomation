@@ -13,7 +13,7 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme={undefined} storageKey="gira-theme" enableSystem={false}>
+    <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark" storageKey="gira-theme" enableSystem={false}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
