@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { Menu, X, LogIn } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import giraLogo from "@/assets/gira-ai-logo.png";
-import ThemeToggle from "./ThemeToggle";
 import { Button } from "./ui/button";
 
 const navItems = [
@@ -147,8 +146,7 @@ const Navbar = () => {
                 </button>
               ))}
             </div>
-            <div className="ml-2 flex items-center gap-2">
-              <ThemeToggle />
+            <div className="ml-2">
               <Button 
                 variant="outline" 
                 size="sm" 
@@ -162,8 +160,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center gap-3">
-            <ThemeToggle />
+          <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-xl bg-secondary/50 border border-border/50 text-foreground hover:bg-secondary transition-all"
