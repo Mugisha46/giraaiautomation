@@ -148,7 +148,7 @@
   }
 
   .tab-button-active {
-    @apply bg-primary text-primary-foreground glow-soft;
+    @apply bg-primary text-primary-foreground;
   }
 }
 

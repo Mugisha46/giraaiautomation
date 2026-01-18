@@ -38,17 +38,8 @@ const HeroSection = () => {
         />
       </div>
 
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-[var(--gradient-hero)]" />
-      <div
-        className="absolute inset-0 opacity-60"
-        style={{ background: "var(--gradient-radial-left)" }}
-      />
-      <div
-        className="absolute inset-0 opacity-60"
-        style={{ background: "var(--gradient-radial-right)" }}
-      />
-      <div className="absolute inset-0 circuit-pattern opacity-30" />
+      {/* Background Overlay - No shadows */}
+      <div className="absolute inset-0 bg-background/60" />
 
       {/* Content */}
       <div className="container mx-auto px-6 relative z-10">
@@ -75,7 +66,7 @@ const HeroSection = () => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
               <a href="#contact" className="btn-ghost-hero group">
-                <div className="w-12 h-12 rounded-full bg-secondary border border-border flex items-center justify-center group-hover:border-primary group-hover:glow-soft transition-all duration-300">
+                <div className="w-12 h-12 rounded-full bg-secondary border border-border flex items-center justify-center group-hover:border-primary transition-all duration-300">
                   <Phone className="w-5 h-5 text-foreground" />
                 </div>
                 <span>Contact Us</span>
