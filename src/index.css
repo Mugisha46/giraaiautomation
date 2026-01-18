@@ -105,7 +105,7 @@
   }
 
   .glass-card {
-    @apply bg-card/80 backdrop-blur-xl border border-border/50 shadow-sm;
+    @apply bg-card/80 backdrop-blur-xl border border-border/50;
   }
 
   .circuit-pattern {
@@ -135,7 +135,7 @@
 
   .btn-hero {
     @apply px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-full 
-           transition-all duration-300 hover:scale-105 glow-primary hover:glow-soft;
+           transition-all duration-300 hover:scale-105;
   }
 
   .btn-ghost-hero {

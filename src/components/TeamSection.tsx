@@ -72,7 +72,7 @@ const TeamSection = () => {
               }}
               className="group perspective-1000"
             >
-              <div className="relative bg-card rounded-2xl overflow-hidden border border-border/50 shadow-lg hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500">
+              <div className="relative bg-card rounded-2xl overflow-hidden border border-border/50 transition-all duration-500">
                 {/* Glow Effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
