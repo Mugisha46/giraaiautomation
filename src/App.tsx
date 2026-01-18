@@ -7,6 +7,7 @@ import { ThemeProvider } from "next-themes";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Testimonials from "./pages/Testimonials";
+import Auth from "./pages/Auth";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
             <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/auth" element={<Auth />} />
             {/* Redirect any unknown routes to home */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

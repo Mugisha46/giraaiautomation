@@ -149,7 +149,12 @@ const Navbar = () => {
             </div>
             <div className="ml-2 flex items-center gap-2">
               <ThemeToggle />
-              <Button variant="outline" size="sm" className="gap-2 rounded-lg">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="gap-2 rounded-lg"
+                onClick={() => navigate("/auth")}
+              >
                 <LogIn className="w-4 h-4" />
                 Login
               </Button>
@@ -186,7 +191,14 @@ const Navbar = () => {
                 {item.name}
               </button>
             ))}
-            <Button variant="outline" className="w-full mt-3 gap-2">
+            <Button 
+              variant="outline" 
+              className="w-full mt-3 gap-2"
+              onClick={() => {
+                setIsOpen(false);
+                navigate("/auth");
+              }}
+            >
               <LogIn className="w-4 h-4" />
               Login
             </Button>
