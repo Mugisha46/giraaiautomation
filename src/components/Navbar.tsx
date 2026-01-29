@@ -8,9 +8,9 @@ const navItems = [
   { name: "Home", href: "#home", isPage: false },
   { name: "Services", href: "#services", isPage: false },
   { name: "Products", href: "#products", isPage: false },
-  { name: "AboutUs", href: "/about", isPage: true },
   { name: "Testimonials", href: "/testimonials", isPage: true },
   { name: "Contact", href: "#contact", isPage: false },
+  { name: "AboutUs", href: "/about", isPage: true },
 ];
 
 const Navbar = () => {
