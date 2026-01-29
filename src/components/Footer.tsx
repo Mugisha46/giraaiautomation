@@ -159,7 +159,7 @@ const Footer = () => {
           </div>
 
           <div className="border-t border-border mt-12 pt-8 text-center text-muted-foreground text-sm">
-            <p>© 2025 Gira AI. All rights reserved.</p>
+            <p>© 2026 Gira AI. All rights reserved.</p>
           </div>
         </div>
       </div>
