@@ -29,22 +29,7 @@ const ProductsSection = () => {
   const [activeTab, setActiveTab] = useState("whatsapp");
 
   // Auto-switch tabs every 3500ms
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveTab((prev) => (prev === "whatsapp" ? "call" : "whatsapp"));
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <section id="products" className="py-24 relative overflow-hidden">
-      <div
-        className="absolute inset-0 opacity-40"
-        style={{ background: "var(--gradient-radial-left)" }}
-      />
-
-      <div className="container mx-auto px-6 relative z-10">
+ 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
           <p className="section-label">Our Products</p>
