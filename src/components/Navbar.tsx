@@ -3,6 +3,7 @@ import { Menu, X, LogIn } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import giraLogo from "@/assets/gira-ai-logo.png";
 import { Button } from "./ui/button";
+import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
   { name: "Home", href: "#home", isPage: false },
@@ -146,7 +147,8 @@ const Navbar = () => {
                 </button>
               ))}
             </div>
-            <div className="ml-2">
+            <div className="ml-2 flex items-center gap-2">
+              <ThemeToggle />
               <Button 
                 variant="outline" 
                 size="sm" 
