@@ -147,7 +147,8 @@ const Navbar = () => {
                 </button>
               ))}
             </div>
-            <div className="ml-2">
+            <div className="ml-2 flex items-center gap-2">
+              <ThemeToggle />
               <Button 
                 variant="outline" 
                 size="sm" 
