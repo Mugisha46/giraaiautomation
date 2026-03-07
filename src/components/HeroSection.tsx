@@ -1,4 +1,4 @@
-import { ArrowRight, MessageCircle, Phone } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import { useRef, useEffect } from "react";
 import heroVideo from "@/assets/hero-video.mp4";
 
